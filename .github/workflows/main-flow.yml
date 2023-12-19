@@ -25,10 +25,10 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/Competitie:latest ./Competitie
+        run: docker build -t ${{ secrets.DOCKER_USER }}/competitie:latest ./Competitie
 
       - name: Upload container to Docker Hub with Push
-        run: docker push ${{ secrets.DOCKER_USER }}/Competitie:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/competitie:latest
   scheidsrechterservice:
     runs-on: ubuntu-latest
     name: Java 17 build, test, deliver Scheidsrechter container
@@ -51,10 +51,10 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/Scheidsrechter:latest ./Scheidsrechter
+        run: docker build -t ${{ secrets.DOCKER_USER }}/scheidsrechter:latest ./Scheidsrechter
 
       - name: Upload container to Docker Hub with Push
-        run: docker push ${{ secrets.DOCKER_USER }}/Scheidsrechter:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/scheidsrechter:latest
   wedstrijdservice:
     runs-on: ubuntu-latest
     name: Java 17 build, test, deliver Wedstrijd container
@@ -77,7 +77,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/Wedstrijd:latest ./Wedstrijd
+        run: docker build -t ${{ secrets.DOCKER_USER }}/wedstrijd:latest ./Wedstrijd
 
       - name: Upload container to Docker Hub with Push
-        run: docker push ${{ secrets.DOCKER_USER }}/Wedstrijd:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/wedstrijd:latest
