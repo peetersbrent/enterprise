@@ -1,0 +1,74 @@
+services:
+  mongo-competities:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_competitie:/data/db
+
+  mysql-scheidsrechter:
+    image: mysql:latest
+    ports:
+      - 3310:3306
+    volumes:
+      - mysqldb_scheidsrechter:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  mysql-wedstrijd:
+    image: mysql:latest
+    ports:
+      - 3309:3306
+    volumes:
+      - mysqldb_wedstrijd:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  competitie-service:
+    depends_on:
+      - mongo-competities
+    image: peetersbrent/competitie-service
+    ports:
+      - 8080:8080
+    links:
+      - mongo-competities
+    environment:
+      MONGODB_PORT: 27017
+      MONGODB_HOST: mongo-competities
+
+  scheidsrechter-service:
+    depends_on:
+      - mysql-scheidsrechter
+    image: peetersbrent/scheidsrechter-service
+    ports:
+      - 8082:8082
+    links:
+      - mysql-scheidsrechter
+    environment:
+      MYSQL_DB_USERNAME: root
+      MYSQL_DB_PASSWORD: root
+      MYSQL_DB_HOST: mysql-scheidsrechter
+      MYSQL_DB_PORT: 3310
+
+  wedstrijden-service:
+    depends_on:
+      - scheidsrechter-service
+      - competitie-service
+    image: peetersbrent/wedstrijd-service
+    ports:
+      - 8081:8081
+    links:
+      - scheidsrechter-service
+      - competitie-service
+    environment:
+      PRODUCT_SERVICE_BASEURL: scheidsrechter-service:8082
+      INVENTORY_INFO_SERVICE_BASEURL: competitie-service:8080
+      MYSQL_DB_USERNAME: root
+      MYSQL_DB_PASSWORD: root
+      MYSQL_DB_HOST: mysql-wedstrijd
+      MYSQL_DB_PORT: 3309
+
+volumes:
+  mongodb_competitie:
+  mysqldb_scheidsrechter:
+  mysqldb_wedstrijd:
