@@ -5,7 +5,7 @@ on: push
 jobs:
   competitieservice:
     runs-on: ubuntu-latest
-    name: Java 17 build, test, deliver competitie-service container
+    name: Java 17 build, test, deliver Competitie container
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -18,20 +18,20 @@ jobs:
           distribution: adopt
       
       - name: Build, test and package project
-        working-directory: ./competitie-service
+        working-directory: ./Competitie
         run: mvn package -B
 
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/competitie-service:latest ./competitie-service
+        run: docker build -t ${{ secrets.DOCKER_USER }}/Competitie:latest ./Competitie
 
       - name: Upload container to Docker Hub with Push
-        run: docker push ${{ secrets.DOCKER_USER }}/competitie-service:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/Competitie:latest
   scheidsrechterservice:
     runs-on: ubuntu-latest
-    name: Java 17 build, test, deliver scheidsrechter-service container
+    name: Java 17 build, test, deliver Scheidsrechter container
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -44,20 +44,20 @@ jobs:
           distribution: adopt
 
       - name: Build, test and package project
-        working-directory: ./scheidsrechter-service
+        working-directory: ./Scheidsrechter
         run: mvn package -B
 
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/scheidsrechter-service:latest ./scheidsrechter-service
+        run: docker build -t ${{ secrets.DOCKER_USER }}/Scheidsrechter:latest ./Scheidsrechter
 
       - name: Upload container to Docker Hub with Push
-        run: docker push ${{ secrets.DOCKER_USER }}/scheidsrechter-service:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/Scheidsrechter:latest
   wedstrijdservice:
     runs-on: ubuntu-latest
-    name: Java 17 build, test, deliver wedstrijd-service container
+    name: Java 17 build, test, deliver Wedstrijd container
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -70,14 +70,14 @@ jobs:
           distribution: adopt
         
       - name: Build, test and package project
-        working-directory: ./wedstrijd-service
+        working-directory: ./Wedstrijd
         run: mvn package -B
         
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/wedstrijd-service:latest ./wedstrijd-service
+        run: docker build -t ${{ secrets.DOCKER_USER }}/Wedstrijd:latest ./Wedstrijd
 
       - name: Upload container to Docker Hub with Push
-        run: docker push ${{ secrets.DOCKER_USER }}/wedstrijd-service:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/Wedstrijd:latest
