@@ -56,6 +56,8 @@ services:
     image: brentpeeters/wedstrijd
     ports:
       - 8081:8081
+    links:
+      - mysql-wedstrijd
     environment:
       MYSQL_DB_USERNAME: root
       MYSQL_DB_PASSWORD: root
