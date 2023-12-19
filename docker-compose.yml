@@ -50,7 +50,7 @@ services:
       MYSQL_DB_HOST: mysql-scheidsrechter
       MYSQL_DB_PORT: 3310
 
-  wedstrijden-service:
+  wedstrijd-service:
     depends_on:
       - mysql-wedstrijd
     image: brentpeeters/wedstrijd
