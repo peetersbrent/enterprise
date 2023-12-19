@@ -1,0 +1,83 @@
+name: Build and deliver containers Brent Peeters
+
+on: push
+
+jobs:
+  competitieservice:
+    runs-on: ubuntu-latest
+    name: Java 17 build, test, deliver competitie-service container
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          cache: maven
+          distribution: adopt
+      
+      - name: Build, test and package project
+        working-directory: ./competitie-service
+        run: mvn package -B
+
+      - name: Docker login
+        run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Docker Build
+        run: docker build -t ${{ secrets.DOCKER_USER }}/competitie-service:latest ./competitie-service
+
+      - name: Upload container to Docker Hub with Push
+        run: docker push ${{ secrets.DOCKER_USER }}/competitie-service:latest
+  scheidsrechterservice:
+    runs-on: ubuntu-latest
+    name: Java 17 build, test, deliver scheidsrechter-service container
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          cache: maven
+          distribution: adopt
+
+      - name: Build, test and package project
+        working-directory: ./scheidsrechter-service
+        run: mvn package -B
+
+      - name: Docker login
+        run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Docker Build
+        run: docker build -t ${{ secrets.DOCKER_USER }}/scheidsrechter-service:latest ./scheidsrechter-service
+
+      - name: Upload container to Docker Hub with Push
+        run: docker push ${{ secrets.DOCKER_USER }}/scheidsrechter-service:latest
+  wedstrijdservice:
+    runs-on: ubuntu-latest
+    name: Java 17 build, test, deliver wedstrijd-service container
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          cache: maven
+          distribution: adopt
+        
+      - name: Build, test and package project
+        working-directory: ./wedstrijd-service
+        run: mvn package -B
+        
+      - name: Docker login
+        run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Docker Build
+        run: docker build -t ${{ secrets.DOCKER_USER }}/wedstrijd-service:latest ./wedstrijd-service
+
+      - name: Upload container to Docker Hub with Push
+        run: docker push ${{ secrets.DOCKER_USER }}/wedstrijd-service:latest
