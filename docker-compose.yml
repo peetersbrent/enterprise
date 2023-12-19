@@ -61,8 +61,8 @@ services:
       - scheidsrechter-service
       - competitie-service
     environment:
-      PRODUCT_SERVICE_BASEURL: scheidsrechter-service:8082
-      INVENTORY_INFO_SERVICE_BASEURL: competitie-service:8080
+      SCHEIDSRECHTER_SERVICE_BASEURL: scheidsrechter-service:8082
+      COMPETITIE_SERVICE_BASEURL: competitie-service:8080
       MYSQL_DB_USERNAME: root
       MYSQL_DB_PASSWORD: root
       MYSQL_DB_HOST: mysql-wedstrijd
