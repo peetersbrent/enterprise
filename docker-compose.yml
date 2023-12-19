@@ -52,17 +52,11 @@ services:
 
   wedstrijden-service:
     depends_on:
-      - scheidsrechter-service
-      - competitie-service
+      - mysql-wedstrijd
     image: brentpeeters/wedstrijd
     ports:
       - 8081:8081
-    links:
-      - scheidsrechter-service
-      - competitie-service
     environment:
-      SCHEIDSRECHTER_SERVICE_BASEURL: scheidsrechter-service:8082
-      COMPETITIE_SERVICE_BASEURL: competitie-service:8080
       MYSQL_DB_USERNAME: root
       MYSQL_DB_PASSWORD: root
       MYSQL_DB_HOST: mysql-wedstrijd
