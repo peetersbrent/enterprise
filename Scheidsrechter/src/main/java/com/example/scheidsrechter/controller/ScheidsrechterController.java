@@ -45,10 +45,10 @@ public class ScheidsrechterController {
         return this.scheidsrechterService.update(scheidsrechterRequest);
     }
 
-    @DeleteMapping({"/{scheidsrechterId}"})
+    @DeleteMapping({"/{skuCode}"})
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteScheidsrechter(@PathVariable String scheidsrechterId) {
-        this.scheidsrechterService.delete(scheidsrechterId);
+    public void deleteScheidsrechter(@PathVariable String skuCode) {
+        this.scheidsrechterService.delete(skuCode);
     }
 
     public ScheidsrechterController(final ScheidsrechterService scheidsrechterService) {

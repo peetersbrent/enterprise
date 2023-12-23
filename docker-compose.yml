@@ -27,7 +27,7 @@ services:
   competitie-service:
     depends_on:
       - mongo-competities
-    image: peetersbrent/competitie-service
+    image: peetersbrent/Competitie
     ports:
       - 8080:8080
     links:
@@ -39,7 +39,7 @@ services:
   scheidsrechter-service:
     depends_on:
       - mysql-scheidsrechter
-    image: peetersbrent/scheidsrechter-service
+    image: peetersbrent/Scheidsrechter
     ports:
       - 8082:8082
     links:
@@ -54,7 +54,7 @@ services:
     depends_on:
       - scheidsrechter-service
       - competitie-service
-    image: peetersbrent/wedstrijd-service
+    image: peetersbrent/Wedstrijd
     ports:
       - 8081:8081
     links:
