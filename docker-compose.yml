@@ -27,7 +27,7 @@ services:
   competitie-service:
     depends_on:
       - mongo-competities
-    image: peetersbrent/Competitie
+    image: brentpeeters/competitie
     ports:
       - 8080:8080
     links:
@@ -39,7 +39,7 @@ services:
   scheidsrechter-service:
     depends_on:
       - mysql-scheidsrechter
-    image: peetersbrent/Scheidsrechter
+    image: brentpeeters/scheidsrechter
     ports:
       - 8082:8082
     links:
@@ -50,19 +50,16 @@ services:
       MYSQL_DB_HOST: mysql-scheidsrechter
       MYSQL_DB_PORT: 3310
 
-  wedstrijden-service:
+  wedstrijd-service:
     depends_on:
       - scheidsrechter-service
       - competitie-service
-    image: peetersbrent/Wedstrijd
+    image: brentpeeters/wedstrijd
     ports:
       - 8081:8081
     links:
-      - scheidsrechter-service
-      - competitie-service
+      - mysql-wedstrijd
     environment:
-      PRODUCT_SERVICE_BASEURL: scheidsrechter-service:8082
-      INVENTORY_INFO_SERVICE_BASEURL: competitie-service:8080
       MYSQL_DB_USERNAME: root
       MYSQL_DB_PASSWORD: root
       MYSQL_DB_HOST: mysql-wedstrijd

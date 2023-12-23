@@ -12,7 +12,14 @@ public class WedstrijdService {
     private final WedstrijdRepository wedstrijdRepository;
 
     public void createWedstrijd(WedstrijdRequest wedstrijdRequest) {
-        Wedstrijd wedstrijd = Wedstrijd.builder().skuCode(wedstrijdRequest.getSkuCode()).thuisTeam(wedstrijdRequest.getThuisTeam()).uitTeam(wedstrijdRequest.getUitTeam()).datum(wedstrijdRequest.getDatum()).ScheidsrechterID(wedstrijdRequest.getScheidsrechterID()).score("0-0").build();
+        Wedstrijd wedstrijd = Wedstrijd.builder()
+                .skuCode(wedstrijdRequest.getSkuCode())
+                .thuisTeam(wedstrijdRequest.getThuisTeam())
+                .uitTeam(wedstrijdRequest.getUitTeam())
+                .datum(wedstrijdRequest.getDatum())
+                .ScheidsrechterID(wedstrijdRequest.getScheidsrechterID())
+                .score(wedstrijdRequest.getScore())
+                .build();
         this.wedstrijdRepository.save(wedstrijd);
     }
 

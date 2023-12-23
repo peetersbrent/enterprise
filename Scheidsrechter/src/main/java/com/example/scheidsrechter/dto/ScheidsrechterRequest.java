@@ -15,5 +15,6 @@ public class ScheidsrechterRequest {
     private String mail;
     private String niveau;
     private Boolean isAssistent;
+    private Long scheidsrechterID;
 
 }

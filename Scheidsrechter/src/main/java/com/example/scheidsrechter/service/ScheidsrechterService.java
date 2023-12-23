@@ -12,7 +12,7 @@ public class ScheidsrechterService {
     private final ScheidsrechterRepository scheidsrechterRepository;
 
     public void createScheidsrechter(ScheidsrechterRequest scheidsrechterRequest) {
-        Scheidsrechter scheidsrechter = Scheidsrechter.builder().skuCode(scheidsrechterRequest.getSkuCode()).naam(scheidsrechterRequest.getNaam()).mail(scheidsrechterRequest.getMail()).niveau(scheidsrechterRequest.getNiveau()).isAssistent(scheidsrechterRequest.getIsAssistent()).build();
+        Scheidsrechter scheidsrechter = Scheidsrechter.builder().skuCode(scheidsrechterRequest.getSkuCode()).naam(scheidsrechterRequest.getNaam()).mail(scheidsrechterRequest.getMail()).niveau(scheidsrechterRequest.getNiveau()).isAssistent(scheidsrechterRequest.getIsAssistent()).scheidsrechterID(scheidsrechterRequest.getScheidsrechterID()).build();
         this.scheidsrechterRepository.save(scheidsrechter);
     }
 
