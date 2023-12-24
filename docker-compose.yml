@@ -65,6 +65,23 @@ services:
       MYSQL_DB_HOST: mysql-wedstrijd
       MYSQL_DB_PORT: 3309
 
+  api-gateway:
+    depends_on:
+      - scheidsrechter-service
+      - competitie-service
+      - wedstrijd-service
+    image: brentpeeters/api-gateway
+    ports:
+      - 8083:8083
+    links:
+      - scheidsrechter-service
+      - competitie-service
+      - wedstrijd-service
+    environment:
+      SCHEIDSRECHTER_SERVICE_BASEURL: scheidsrechter-service:8082
+      COMPETITIE_SERVICE_BASEURL: competitie-service:8080
+      WEDSTRIJD_SERVICE_BASEURL: wedstrijd-service:8081
+
 volumes:
   mongodb_competitie:
   mysqldb_scheidsrechter:

@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="api-gateway" />
         <module name="Competitie" />
         <module name="Scheidsrechter" />
         <module name="Wedstrijd" />
@@ -22,6 +23,7 @@
       <module name="Competitie" options="-parameters" />
       <module name="Scheidsrechter" options="-parameters" />
       <module name="Wedstrijd" options="-parameters" />
+      <module name="api-gateway" options="-parameters" />
       <module name="project_enterprise" options="-parameters" />
     </option>
   </component>

@@ -20,6 +20,7 @@ public class WedstrijdService {
                 .ScheidsrechterID(wedstrijdRequest.getScheidsrechterID())
                 .score(wedstrijdRequest.getScore())
                 .build();
+        System.out.println(wedstrijd.getScore());
         this.wedstrijdRepository.save(wedstrijd);
     }
 
