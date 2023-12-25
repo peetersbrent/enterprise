@@ -23,11 +23,12 @@ spring:
           uri: http://${WEDSTRIJD_SERVICE_BASEURL:localhost:8081}
           predicates:
             - Path=/wedstrijd
+            - Method=GET
           filters:
             - SetPath=/api/wedstrijd/all
-        - id: scheidsrechter-service-all
+        - id: scheidsrechter-service
           uri: http://${SCHEIDSRECHTER_SERVICE_BASEURL:localhost:8082}
           predicates:
             - Path=/scheidsrechter
           filters:
-            - SetPath=/api/scheidsrechter/all
+            - SetPath=/api/scheidsrechter

@@ -52,8 +52,7 @@ services:
 
   wedstrijd-service:
     depends_on:
-      - scheidsrechter-service
-      - competitie-service
+      - mysql-wedstrijd
     image: brentpeeters/wedstrijd
     ports:
       - 8081:8081
