@@ -35,7 +35,12 @@ public class WedstrijdService {
 
     public List<WedstrijdResponse> get(List<String> skuCode) {
         return this.wedstrijdRepository.findWedstrijdBySkuCodeIn(skuCode).stream().map((wedstrijd) -> {
-            return WedstrijdResponse.builder().skuCode(wedstrijd.getSkuCode()).thuisTeam(wedstrijd.getThuisTeam()).uitTeam(wedstrijd.getUitTeam()).datum(wedstrijd.getDatum()).ScheidsrechterID(wedstrijd.getScheidsrechterID()).score(wedstrijd.getScore()).build();
+            return WedstrijdResponse.builder().skuCode(wedstrijd.getSkuCode())
+                    .thuisTeam(wedstrijd.getThuisTeam())
+                    .uitTeam(wedstrijd.getUitTeam())
+                    .datum(wedstrijd.getDatum())
+                    .ScheidsrechterID(wedstrijd.getScheidsrechterID())
+                    .score(wedstrijd.getScore()).build();
         }).toList();
     }
 
@@ -43,9 +48,16 @@ public class WedstrijdService {
         Wedstrijd wedstrijd = this.wedstrijdRepository.findWedstrijdBySkuCode(wedstrijdRequest.getSkuCode());
         wedstrijd.setDatum(wedstrijdRequest.getDatum());
         wedstrijd.setScheidsrechterID(wedstrijdRequest.getScheidsrechterID());
+        wedstrijd.setThuisTeam(wedstrijdRequest.getThuisTeam());
+        wedstrijd.setUitTeam(wedstrijdRequest.getUitTeam());
         wedstrijd.setScore(wedstrijdRequest.getScore());
         this.wedstrijdRepository.save(wedstrijd);
-        return WedstrijdResponse.builder().skuCode(wedstrijd.getSkuCode()).datum(wedstrijd.getDatum()).ScheidsrechterID(wedstrijd.getScheidsrechterID()).score(wedstrijd.getScore()).build();
+        return WedstrijdResponse.builder().skuCode(wedstrijd.getSkuCode())
+                .datum(wedstrijd.getDatum())
+                .ScheidsrechterID(wedstrijd.getScheidsrechterID())
+                .thuisTeam(wedstrijd.getThuisTeam())
+                .uitTeam(wedstrijd.getUitTeam())
+                .score(wedstrijd.getScore()).build();
     }
 
     public void delete(String skuCode) {

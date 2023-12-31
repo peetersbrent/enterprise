@@ -37,8 +37,16 @@ public class ScheidsrechterService {
         scheidsrechter.setMail(scheidsrechterRequest.getMail());
         scheidsrechter.setNiveau(scheidsrechterRequest.getNiveau());
         scheidsrechter.setIsAssistent(scheidsrechterRequest.getIsAssistent());
+        scheidsrechter.setGeboortedatum(scheidsrechterRequest.getGeboortedatum());
         this.scheidsrechterRepository.save(scheidsrechter);
-        return ScheidsrechterResponse.builder().skuCode(scheidsrechter.getSkuCode()).naam(scheidsrechter.getNaam()).niveau(scheidsrechter.getNiveau()).isAssistent(scheidsrechter.getIsAssistent()).build();
+        return ScheidsrechterResponse.builder()
+                .skuCode(scheidsrechter.getSkuCode())
+                .naam(scheidsrechter.getNaam())
+                .niveau(scheidsrechter.getNiveau())
+                .isAssistent(scheidsrechter.getIsAssistent())
+                .geboortedatum(scheidsrechter.getGeboortedatum())
+                .mail(scheidsrechter.getMail())
+                .build();
     }
 
     public void delete(String skuCode) {
