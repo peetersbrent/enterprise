@@ -6,23 +6,23 @@ import com.example.scheidsrechter.model.Scheidsrechter;
 import com.example.scheidsrechter.repository.ScheidsrechterRepository;
 import com.example.scheidsrechter.service.ScheidsrechterService;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.mockito.Mockito.*;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
 
 @SpringBootTest
-class ScheidsrechterApplicationTests {
+public class ScheidsrechterServiceTests {
 
     @InjectMocks
     private ScheidsrechterService scheidsrechterService;
@@ -201,5 +201,4 @@ class ScheidsrechterApplicationTests {
         // Assert
         verify(scheidsrechterRepository, times(1)).findScheidsrechterBySkuCode("SKU123");
     }
-
 }

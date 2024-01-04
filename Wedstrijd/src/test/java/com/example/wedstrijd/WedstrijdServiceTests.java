@@ -15,13 +15,12 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import static org.hamcrest.Matchers.any;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.times;
 
 @SpringBootTest
-class WedstrijdApplicationTests {
-
+public class WedstrijdServiceTests {
     @InjectMocks
     private WedstrijdService wedstrijdService;
 
@@ -191,5 +190,4 @@ class WedstrijdApplicationTests {
         // Assert
         verify(wedstrijdRepository, times(1)).findWedstrijdBySkuCode("SKU123");
     }
-
 }
