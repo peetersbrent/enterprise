@@ -1,1 +1,1 @@
-![Alt tekst](https://github.com/peetersbrent/enterprise_bp/issues/1#issue-2066284748)
+![enterprise_bp drawio](https://github.com/peetersbrent/enterprise_bp/assets/91012837/c49efaa3-fa35-458e-be81-a73d9c3d791c)
