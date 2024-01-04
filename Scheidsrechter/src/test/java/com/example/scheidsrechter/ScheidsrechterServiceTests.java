@@ -21,7 +21,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
 
-@SpringBootTest
+@SpringBootTest(classes = ScheidsrechterServiceTests.class)
 public class ScheidsrechterServiceTests {
 
     @InjectMocks
