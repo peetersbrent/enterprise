@@ -11,6 +11,6 @@
 
 ## Werking van endpoints:
 
-## Scheidsrechter
-## Wedstrijd
-## Competitie
+### Scheidsrechter
+### Wedstrijd
+### Competitie
