@@ -18,7 +18,9 @@ De **_Wedstrijd-microservice_** richt zich op de organisatie van individuele wed
 ## Werking van endpoints:
 
 ### Scheidsrechter
-Op de screenshot hieronder zie je dat ik een scheidsrechter kan verwijderen. Daaronder zie je het resultaat.
+Op de screenshot hieronder zie je dat ik een scheidsrechter met een skuCode kan verwijderen. 
+Daaronder zie je het resultaat dat ik de scheidsrechter met skuCode 2 heb verwijderd.
+
 ![scheidsrechter_delete](https://github.com/peetersbrent/enterprise_bp/assets/91012837/848ed65f-87e5-459e-b5a0-cb8e0e0654a4)
 ![scheidsrechter_delete_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/255ac170-cc7b-457d-889a-06630bf49251)
 
