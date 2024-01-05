@@ -25,9 +25,16 @@ Daaronder zie je het resultaat dat ik de scheidsrechter met skuCode 2 heb verwij
 ![scheidsrechter_delete_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/255ac170-cc7b-457d-889a-06630bf49251)
 
 ### Wedstrijd
+
+
 ![wedstrijd_all](https://github.com/peetersbrent/enterprise_bp/assets/91012837/08c693fb-1398-4323-8097-bc74ef6c1e20)
+
+Op de screenshot hieronder zie je dat ik een wedstrijd met een skuCode kan verwijderen. 
+Daaronder zie je het resultaat dat ik de wedstrijd met skuCode 2 heb verwijderd.
+
 ![wedstrijd_delete](https://github.com/peetersbrent/enterprise_bp/assets/91012837/d43f3f22-6150-4149-be7d-8a0d51b9067c)
 ![wedstrijd_delete_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/fcd88831-b3d3-418f-9bbc-16f5c75cdcfa)
+
 ![wedstrijd_post](https://github.com/peetersbrent/enterprise_bp/assets/91012837/5534d3ce-766f-43cb-ad44-199badc4254c)
 ![wedstrijd_post_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/e04e9484-6375-42da-a138-1b412b172f22)
 ![wedstrijd_put](https://github.com/peetersbrent/enterprise_bp/assets/91012837/98f03b51-d3ae-40d3-b7cd-8b4106964369)
