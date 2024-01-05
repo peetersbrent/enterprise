@@ -38,8 +38,14 @@ Daaronder zie je het resultaat dat ik de wedstrijd met skuCode 5 heb verwijderd.
 ![wedstrijd_delete](https://github.com/peetersbrent/enterprise_bp/assets/91012837/d43f3f22-6150-4149-be7d-8a0d51b9067c)
 ![wedstrijd_delete_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/fcd88831-b3d3-418f-9bbc-16f5c75cdcfa)
 
+Op de screenshot hieronder zie je dat ik een wedstrijd kan aanmaken. 
+Daaronder zie je het resultaat dat ik de wedstrijd daadwerkelijk aanmaak.
+
 ![wedstrijd_post](https://github.com/peetersbrent/enterprise_bp/assets/91012837/5534d3ce-766f-43cb-ad44-199badc4254c)
 ![wedstrijd_post_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/e04e9484-6375-42da-a138-1b412b172f22)
+
+Op deze screenshot zie je dat je een wedstrijd ook kan aanpassen.
+
 ![wedstrijd_put](https://github.com/peetersbrent/enterprise_bp/assets/91012837/98f03b51-d3ae-40d3-b7cd-8b4106964369)
 
 ### Competitie
@@ -51,10 +57,13 @@ Je kan natuurlijk ook alle wedstrijden in één keer opvragen.
 ![competitie_skuCode](https://github.com/peetersbrent/enterprise_bp/assets/91012837/55c471ae-61c2-454b-94bc-5ec6bb7f8d0f)
 
 Op de screenshot hieronder zie je dat ik een competitie met een skuCode kan verwijderen. 
-Daaronder zie je het resultaat dat ik de competitie met skuCode 5 heb verwijderd.
+Daaronder zie je het resultaat dat ik de competitie met skuCode 4 heb verwijderd.
 
 ![competitie_delete](https://github.com/peetersbrent/enterprise_bp/assets/91012837/8d6d0344-f76d-4375-b3fa-f090b5f0b52a)
 ![competitie_delete_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/e7a752a2-2aa7-4dc2-8840-5497f81d0113)
+
+Op de screenshot hieronder zie je dat ik een competitie kan aanmaken. 
+Daaronder zie je het resultaat dat ik de competitie daadwerkelijk aanmaak.
 
 ![competitie_post](https://github.com/peetersbrent/enterprise_bp/assets/91012837/ea0561f1-4f49-467e-91a4-22ef648ca48b)
 ![competitie_post_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/cd6e17d2-61e9-4c3c-909d-5265eb87a99d)
