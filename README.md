@@ -7,9 +7,9 @@ Het geheel van dit project zorgt voor een efficiënt en flexibel systeem voor he
 ## Microservices
 De Competitie-microservice beheert de overkoepelende structuur van een voetbalcompetitie. Hier worden details zoals de provincie, ploegen in de bepaalde competitie, de start en einddatum en de competitieleider bijgehouden. Je kan natuurlijk zoeken per competitie, ook alle competitie in totaal. Je kan een competitie aanmaken maar niet aanpassen. Hier heb ik voor gekozen omdat een competitie elk jaar opnieuw wordt aangemaakt maar doorheen het jaar kan deze niet worden aangepast.
 
-De Scheidsrechter-microservice is het kloppende hart van het project, waarin alle informatie met betrekking tot scheidsrechters wordt opgeslagen en beheerd. Het omvat gegevens over beschikbaarheid, toewijzingen aan specifieke wedstrijden en beoordelingen van prestaties. Deze microservice optimaliseert het proces van scheidsrechtertoewijzing en evaluatie, wat bijdraagt aan een eerlijke en professionele uitvoering van sportevenementen.
+De Scheidsrechter-microservice is belangrijk en hierin wordt alle informatie met betrekking tot scheidsrechters opgeslagen en beheerd. Het omvat gegevens over de scheidsrechter zoals naam, geboortedatum, email en het niveau waarop hij/zij fluit of vlagt. Ook houd ik bij of de scheidsrechter een assisistent is ja of nee. Je kan natuurlijk zoeken naar een scheidsrechter, ook alle scheidsrechters in totaal. Je kan ook een scheidsrechter aanmaken, bijwerken en verwijderen.
 
-De Wedstrijd-microservice richt zich op de organisatie en monitoring van individuele wedstrijden. Hier worden details zoals teamsamenstelling, wedstrijdtijden en locaties vastgelegd. Deze microservice helpt bij het stroomlijnen van het wedstrijdbeheer, zodat alles soepel verloopt vanaf de planning tot aan de uiteindelijke afsluiting van de wedstrijd.
+De Wedstrijd-microservice richt zich op de organisatie van individuele wedstrijden. Hier worden details van de wedstrijd weergegeven zoals het thuis en uitteam, de datum van de wedstrijd, het ID van de scheidsrechter en de score. Ook hier weer kan natuurlijk zoeken naar een wedstrijd, ook alle wedstrijden in totaal. Je kan ook een wedstrijd aanmaken, bijwerken en verwijderen.
 ## Gateways
 
 ## Schema
