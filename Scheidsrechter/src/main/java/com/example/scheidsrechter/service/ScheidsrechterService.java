@@ -12,18 +12,39 @@ public class ScheidsrechterService {
     private final ScheidsrechterRepository scheidsrechterRepository;
 
     public void createScheidsrechter(ScheidsrechterRequest scheidsrechterRequest) {
-        Scheidsrechter scheidsrechter = Scheidsrechter.builder().skuCode(scheidsrechterRequest.getSkuCode()).naam(scheidsrechterRequest.getNaam()).mail(scheidsrechterRequest.getMail()).niveau(scheidsrechterRequest.getNiveau()).isAssistent(scheidsrechterRequest.getIsAssistent()).scheidsrechterID(scheidsrechterRequest.getScheidsrechterID()).build();
+        Scheidsrechter scheidsrechter = Scheidsrechter.builder()
+                .skuCode(scheidsrechterRequest.getSkuCode())
+                .naam(scheidsrechterRequest.getNaam())
+                .mail(scheidsrechterRequest.getMail())
+                .geboortedatum(scheidsrechterRequest.getGeboortedatum())
+                .niveau(scheidsrechterRequest.getNiveau())
+                .isAssistent(scheidsrechterRequest.getIsAssistent())
+                .scheidsrechterID(scheidsrechterRequest.getScheidsrechterID()).build();
         this.scheidsrechterRepository.save(scheidsrechter);
     }
 
     public List<ScheidsrechterResponse> get(List<String> skuCode) {
         return this.scheidsrechterRepository.findScheidsrechterBySkuCodeIn(skuCode).stream().map((scheidsrechter) -> {
-            return ScheidsrechterResponse.builder().skuCode(scheidsrechter.getSkuCode()).isAssistent(scheidsrechter.getIsAssistent()).niveau(scheidsrechter.getNiveau()).naam(scheidsrechter.getNaam()).build();
+            return ScheidsrechterResponse.builder()
+                    .skuCode(scheidsrechter.getSkuCode())
+                    .naam(scheidsrechter.getNaam())
+                    .mail(scheidsrechter.getMail())
+                    .geboortedatum(scheidsrechter.getGeboortedatum())
+                    .niveau(scheidsrechter.getNiveau())
+                    .isAssistent(scheidsrechter.getIsAssistent())
+                    .scheidsrechterID(scheidsrechter.getScheidsrechterID()).build();
         }).toList();
     }
 
     private ScheidsrechterResponse mapToScheidsrechterResponse(Scheidsrechter scheidsrechter) {
-        return ScheidsrechterResponse.builder().skuCode(scheidsrechter.getSkuCode()).naam(scheidsrechter.getNaam()).niveau(scheidsrechter.getNiveau()).isAssistent(scheidsrechter.getIsAssistent()).build();
+        return ScheidsrechterResponse.builder()
+                .skuCode(scheidsrechter.getSkuCode())
+                .naam(scheidsrechter.getNaam())
+                .mail(scheidsrechter.getMail())
+                .geboortedatum(scheidsrechter.getGeboortedatum())
+                .niveau(scheidsrechter.getNiveau())
+                .isAssistent(scheidsrechter.getIsAssistent())
+                .scheidsrechterID(scheidsrechter.getScheidsrechterID()).build();
     }
 
     public List<ScheidsrechterResponse> getAllScheidsrechters() {
@@ -38,6 +59,7 @@ public class ScheidsrechterService {
         scheidsrechter.setNiveau(scheidsrechterRequest.getNiveau());
         scheidsrechter.setIsAssistent(scheidsrechterRequest.getIsAssistent());
         scheidsrechter.setGeboortedatum(scheidsrechterRequest.getGeboortedatum());
+        scheidsrechter.setScheidsrechterID(scheidsrechterRequest.getScheidsrechterID());
         this.scheidsrechterRepository.save(scheidsrechter);
         return ScheidsrechterResponse.builder()
                 .skuCode(scheidsrechter.getSkuCode())
@@ -46,6 +68,7 @@ public class ScheidsrechterService {
                 .isAssistent(scheidsrechter.getIsAssistent())
                 .geboortedatum(scheidsrechter.getGeboortedatum())
                 .mail(scheidsrechter.getMail())
+                .scheidsrechterID(scheidsrechter.getScheidsrechterID())
                 .build();
     }
 
