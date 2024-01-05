@@ -20,5 +20,6 @@ De **_Wedstrijd-microservice_** richt zich op de organisatie van individuele wed
 ### Scheidsrechter
 ### Wedstrijd
 ### Competitie
+### Api-gateway (Google Cloud Platform 0Auth2)
 
 ## Hosting 
