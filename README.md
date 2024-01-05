@@ -5,7 +5,7 @@ Het project bestaat uit drie belangrijke microservices namelijk: competitie, sch
 Het geheel van dit project zorgt voor een efficiënt en flexibel systeem voor het organiseren en uitvoeren van sportevenementen.
 
 ## Microservices
-De Competitie-microservice beheert de overkoepelende structuur van sportcompetities. Hier worden details zoals teamregistraties, competitiekalenders en ranglijsten bijgehouden. Het biedt een gestroomlijnde en flexibele manier om verschillende sportcompetities te organiseren en te volgen.
+De Competitie-microservice beheert de overkoepelende structuur van een voetbalcompetitie. Hier worden details zoals de provincie, ploegen in de bepaalde competitie, de start en einddatum en de competitieleider bijgehouden. Je kan natuurlijk zoeken per competitie, ook alle competitie in totaal. Je kan een competitie aanmaken maar niet aanpassen. Hier heb ik voor gekozen omdat een competitie elk jaar opnieuw wordt aangemaakt maar doorheen het jaar kan deze niet worden aangepast.
 
 De Scheidsrechter-microservice is het kloppende hart van het project, waarin alle informatie met betrekking tot scheidsrechters wordt opgeslagen en beheerd. Het omvat gegevens over beschikbaarheid, toewijzingen aan specifieke wedstrijden en beoordelingen van prestaties. Deze microservice optimaliseert het proces van scheidsrechtertoewijzing en evaluatie, wat bijdraagt aan een eerlijke en professionele uitvoering van sportevenementen.
 
