@@ -41,7 +41,7 @@ Daaronder zie je het resultaat dat ik de wedstrijd met skuCode 5 heb verwijderd.
 Op de screenshot hieronder zie je dat ik een wedstrijd kan aanmaken. 
 Daaronder zie je het resultaat dat ik de wedstrijd daadwerkelijk aanmaak.
 
-![wedstrijd_post](https://github.com/peetersbrent/enterprise_bp/assets/91012837/5534d3ce-766f-43cb-ad44-199badc4254c)
+![wedstrijd_post](https://github.com/peetersbrent/enterprise_bp/assets/91012837/2fdfb667-1e04-472b-a911-5c42a80198eb)
 ![wedstrijd_post_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/e04e9484-6375-42da-a138-1b412b172f22)
 
 Op deze screenshot zie je dat je een wedstrijd ook kan aanpassen.
