@@ -69,8 +69,22 @@ Daaronder zie je het resultaat dat ik de competitie daadwerkelijk aanmaak.
 ![competitie_post_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/cd6e17d2-61e9-4c3c-909d-5265eb87a99d)
 
 ### Api-gateway (Google Cloud Platform 0Auth2)
+
+Op de screenshot hieronder zie je dat ik een wedstrijd kan opvragen met een bepaalde skuCode via de api-gateway.
+Dit wel zonder Authentication.
+
 ![api_competitie_skuCode](https://github.com/peetersbrent/enterprise_bp/assets/91012837/bedc3409-561c-478e-bf1a-1e06cacdcd92)
-![api_wedstrijd_auth](https://github.com/peetersbrent/enterprise_bp/assets/91012837/b432f204-8c24-45ef-9147-c6616a484e26)
+
+Op de eerste screenshot zie je dat ik geen toegang heb tot een wedstrijd. 
+De screenshot daaronder zie je dat ik met een Bearer token wel toegang heb tot wedstrijd.
+
 ![api_wedstrijd_NOauth](https://github.com/peetersbrent/enterprise_bp/assets/91012837/aa582c5c-c3c7-436a-9bc6-8e58154078dd)
+![api_wedstrijd_auth](https://github.com/peetersbrent/enterprise_bp/assets/91012837/b432f204-8c24-45ef-9147-c6616a484e26)
 
 ## Hosting 
+
+Okteto: https://cloud.okteto.com/spaces/peetersbrent?resourceId=75d90cf5-4e73-4656-b381-da9058238aa7 
+  Api-gateway: https://api-gateway-peetersbrent.cloud.okteto.net
+  Competitie: https://competitie-service-peetersbrent.cloud.okteto.net
+  Scheidsrechter: https://scheidsrechter-service-peetersbrent.cloud.okteto.net
+  Wedstrijd: https://wedstrijd-service-peetersbrent.cloud.okteto.net
