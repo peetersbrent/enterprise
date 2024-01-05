@@ -84,7 +84,7 @@ De screenshot daaronder zie je dat ik met een Bearer token wel toegang heb tot w
 ## Hosting 
 
 Okteto: https://cloud.okteto.com/spaces/peetersbrent?resourceId=75d90cf5-4e73-4656-b381-da9058238aa7 
-  Api-gateway: https://api-gateway-peetersbrent.cloud.okteto.net
-  Competitie: https://competitie-service-peetersbrent.cloud.okteto.net
-  Scheidsrechter: https://scheidsrechter-service-peetersbrent.cloud.okteto.net
-  Wedstrijd: https://wedstrijd-service-peetersbrent.cloud.okteto.net
+  - Api-gateway: https://api-gateway-peetersbrent.cloud.okteto.net
+  - Competitie: https://competitie-service-peetersbrent.cloud.okteto.net
+  - Scheidsrechter: https://scheidsrechter-service-peetersbrent.cloud.okteto.net
+  - Wedstrijd: https://wedstrijd-service-peetersbrent.cloud.okteto.net
