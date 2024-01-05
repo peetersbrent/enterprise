@@ -32,6 +32,14 @@ public class ScheidsrechterServiceTests {
     @Test
     public void testCreateScheidsrechter() {
 
+        int year = 1985;
+        int month = 6; // May
+        int day = 15;
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month, day);
+        Date birthDate = calendar.getTime();
+
         ScheidsrechterRequest scheidsrechterRequest = new ScheidsrechterRequest();
 
         scheidsrechterRequest.setScheidsrechterID(1L);
@@ -40,6 +48,7 @@ public class ScheidsrechterServiceTests {
         scheidsrechterRequest.setMail("mail@gmail.com");
         scheidsrechterRequest.setNiveau("1ste Prov.");
         scheidsrechterRequest.setIsAssistent(true);
+        scheidsrechterRequest.setGeboortedatum(birthDate);
 
         scheidsrechterService.createScheidsrechter(scheidsrechterRequest);
 
@@ -74,10 +83,13 @@ public class ScheidsrechterServiceTests {
 
         // Assert
         assertEquals(1, scheidsrechterResponses.size());
+        assertEquals(1L, scheidsrechterResponses.get(0).getScheidsrechterID());
         assertEquals("SKU123", scheidsrechterResponses.get(0).getSkuCode());
         assertEquals("Test Naam", scheidsrechterResponses.get(0).getNaam());
         assertEquals("1ste Prov.", scheidsrechterResponses.get(0).getNiveau());
         assertEquals(true, scheidsrechterResponses.get(0).getIsAssistent());
+        assertEquals("mail@gmail.com", scheidsrechterResponses.get(0).getMail());
+        assertEquals(birthDate, scheidsrechterResponses.get(0).getGeboortedatum());
 
         verify(scheidsrechterRepository, times(1)).findAll();
     }
@@ -109,10 +121,13 @@ public class ScheidsrechterServiceTests {
 
         // Assert
         assertEquals(1, scheidsrechterResponses.size());
+        assertEquals(1L, scheidsrechterResponses.get(0).getScheidsrechterID());
         assertEquals("SKU123", scheidsrechterResponses.get(0).getSkuCode());
         assertEquals("Test Naam", scheidsrechterResponses.get(0).getNaam());
         assertEquals("1ste Prov.", scheidsrechterResponses.get(0).getNiveau());
         assertEquals(true, scheidsrechterResponses.get(0).getIsAssistent());
+        assertEquals("mail@gmail.com", scheidsrechterResponses.get(0).getMail());
+        assertEquals(birthDate, scheidsrechterResponses.get(0).getGeboortedatum());
 
         verify(scheidsrechterRepository, times(1)).findScheidsrechterBySkuCodeIn(Collections.singletonList(scheidsrechter.getSkuCode()));
     }
