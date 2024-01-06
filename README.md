@@ -108,8 +108,6 @@ Daaronder zie je het resultaat dat ik de scheidsrechter daadwerkelijk aanmaak.
 ![api_scheidsrechter_post_auth](https://github.com/peetersbrent/enterprise_bp/assets/91012837/40050973-3245-412c-b994-5b889eed7422)
 ![api_scheidsrechter_post_auth_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/1da8946f-a34b-4b6f-a54e-570b0754f50e)
 
-![api_scheidsrechter_delete_auth](https://github.com/peetersbrent/enterprise_bp/assets/91012837/f926e3f0-20c4-45d1-b361-bcc778203762)
-
 Op deze screenshot zie je dat je een scheidsrechter ook kan aanpassen.
 Met daaronder het resultaat.
 
