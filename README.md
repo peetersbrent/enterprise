@@ -16,6 +16,15 @@ Een API Gateway is iets dat alles regelt voor microservices. Het ontvangt verzoe
 
 ## Schema
 
+Dit schema toont de architectuur en interactie tussen verschillende services en databases in een softwaretoepassing. Het illustreert hoe de API-gateway communiceert met andere services zoals "scheidsrechter-service", "competitie-service" en "wedstrijd-service", en hoe deze services op hun beurt verbonden zijn met hun respectievelijke databases.
+
+- **API Endpoints**: Het schema toont verschillende API-endpoints met HTTP-methoden zoals GET, POST, DELETE en hun respectieve paden.
+- **API-Gateway**: De "api-gateway" is afhankelijk van en verbonden met drie services: "scheidsrechter-service", "competitie-service" en "wedstrijd-service".
+- **Services en Databases**: De "wedstrijd-service" is gekoppeld aan een MySQL-database genaamd “mysql:wedstrijd”. De "scheidsrechter-service" is gekoppeld aan een MySQL-database genaamd “mysql:scheidsrechter”. De “competitie-service” is verbonden met een MongoDB-database genaamd “mongo:competitie”.
+- **Configuratie**: Aan de rechterkant van het schema staat aanvullende informatie over de configuratie van de api-gateway, inclusief afhankelijkheden en omgevingsvariabelen. 
+
+Dit schema is een nuttige visuele weergave van hoe de verschillende componenten van de softwaretoepassing met elkaar communiceren. Het helpt bij het begrijpen van de stroom van gegevens en de interacties tussen de verschillende services en databases.
+
 ![schema](https://github.com/peetersbrent/enterprise_bp/assets/91012837/f9a60dff-ced5-4d66-a296-61bbe5b0f249)
 
 ## Werking van endpoints:
