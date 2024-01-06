@@ -10,19 +10,40 @@ De **_Competitie-microservice_** beheert de overkoepelende structuur van een voe
 De **_Scheidsrechter-microservice_** is belangrijk en hierin wordt alle informatie met betrekking tot scheidsrechters opgeslagen en beheerd. Het omvat gegevens over de scheidsrechter zoals naam, geboortedatum, email en het niveau waarop hij/zij fluit of vlagt. Ook houd ik bij of de scheidsrechter een assisistent is ja of nee. Je kan natuurlijk zoeken naar een scheidsrechter, ook alle scheidsrechters in totaal. Je kan ook een scheidsrechter aanmaken, bijwerken en verwijderen.
 
 De **_Wedstrijd-microservice_** richt zich op de organisatie van individuele wedstrijden. Hier worden details van de wedstrijd weergegeven zoals het thuis en uitteam, de datum van de wedstrijd, het ID van de scheidsrechter en de score. Ook hier weer kan natuurlijk zoeken naar een wedstrijd, ook alle wedstrijden in totaal. Je kan ook een wedstrijd aanmaken, bijwerken en verwijderen.
+
 ## Gateway
+Een API Gateway is iets dat alles regelt voor microservices. Het ontvangt verzoeken, handelt taken zoals authenticatie af en stuurt het verkeer naar de juiste microservice. Het maakt de communicatie tussen client-apps en microservices eenvoudiger en efficiënter.
 
 ## Schema
-![enterprise_bp drawio](https://github.com/peetersbrent/enterprise_bp/assets/91012837/c49efaa3-fa35-458e-be81-a73d9c3d791c)
+
+![schema](https://github.com/peetersbrent/enterprise_bp/assets/91012837/f9a60dff-ced5-4d66-a296-61bbe5b0f249)
 
 ## Werking van endpoints:
 
 ### Scheidsrechter
+
+Op de screenshot hieronder zie je dat ik een scheidsrechter kan opvragen met een bepaalde skuCode.
+Je kan natuurlijk ook alle scheidsrechters in één keer opvragen.
+
+![scheidsrechter_all](https://github.com/peetersbrent/enterprise_bp/assets/91012837/df48e7a0-f905-45bc-a07b-cfb42f14186d)
+![scheidsrechter_skuCode](https://github.com/peetersbrent/enterprise_bp/assets/91012837/0dd75256-c5ae-4dc9-a2cc-6aa60f4a7ef0)
+
 Op de screenshot hieronder zie je dat ik een scheidsrechter met een skuCode kan verwijderen. 
 Daaronder zie je het resultaat dat ik de scheidsrechter met skuCode 2 heb verwijderd.
 
 ![scheidsrechter_delete](https://github.com/peetersbrent/enterprise_bp/assets/91012837/848ed65f-87e5-459e-b5a0-cb8e0e0654a4)
 ![scheidsrechter_delete_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/255ac170-cc7b-457d-889a-06630bf49251)
+
+Op de screenshot hieronder zie je dat ik een scheidsrechter kan aanmaken. 
+Daaronder zie je het resultaat dat ik de scheidsrechter daadwerkelijk aanmaak.
+
+![scheidsrechter_post](https://github.com/peetersbrent/enterprise_bp/assets/91012837/7f7f57d3-be02-470d-adb4-afaa1b14655b)
+![scheidsrechter_post_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/0da4cb17-4493-4b77-bc0c-ae2c300f5cc7)
+
+Op deze screenshot zie je dat je een scheidsrechter ook kan aanpassen.
+
+![scheidsrechter_put](https://github.com/peetersbrent/enterprise_bp/assets/91012837/cfb9d6da-4481-4d61-b843-98470248ffb2)
+
 
 ### Wedstrijd
 
@@ -50,8 +71,8 @@ Op deze screenshot zie je dat je een wedstrijd ook kan aanpassen.
 
 ### Competitie
 
-Op de screenshot hieronder zie je dat ik een wedstrijd kan opvragen met een bepaalde skuCode.
-Je kan natuurlijk ook alle wedstrijden in één keer opvragen.
+Op de screenshot hieronder zie je dat ik een competitie kan opvragen met een bepaalde skuCode.
+Je kan natuurlijk ook alle competitie in één keer opvragen.
 
 ![competitie_all](https://github.com/peetersbrent/enterprise_bp/assets/91012837/9a21000e-9466-4bbb-9b7f-af099c401822)
 ![competitie_skuCode](https://github.com/peetersbrent/enterprise_bp/assets/91012837/55c471ae-61c2-454b-94bc-5ec6bb7f8d0f)
@@ -70,7 +91,7 @@ Daaronder zie je het resultaat dat ik de competitie daadwerkelijk aanmaak.
 
 ### Api-gateway (Google Cloud Platform 0Auth2)
 
-Op de screenshot hieronder zie je dat ik een wedstrijd kan opvragen met een bepaalde skuCode via de api-gateway.
+Op de screenshot hieronder zie je dat ik een competitie kan opvragen met een bepaalde skuCode via de api-gateway.
 Dit wel zonder Authentication.
 
 ![api_competitie_skuCode](https://github.com/peetersbrent/enterprise_bp/assets/91012837/bedc3409-561c-478e-bf1a-1e06cacdcd92)
@@ -80,6 +101,20 @@ De screenshot daaronder zie je dat ik met een Bearer token wel toegang heb tot w
 
 ![api_wedstrijd_NOauth](https://github.com/peetersbrent/enterprise_bp/assets/91012837/aa582c5c-c3c7-436a-9bc6-8e58154078dd)
 ![api_wedstrijd_auth](https://github.com/peetersbrent/enterprise_bp/assets/91012837/b432f204-8c24-45ef-9147-c6616a484e26)
+
+Op de screenshot hieronder zie je dat ik een scheidsrechter kan aanmaken ook weer beveiligd. 
+Daaronder zie je het resultaat dat ik de scheidsrechter daadwerkelijk aanmaak.
+
+![api_scheidsrechter_post_auth](https://github.com/peetersbrent/enterprise_bp/assets/91012837/40050973-3245-412c-b994-5b889eed7422)
+![api_scheidsrechter_post_auth_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/1da8946f-a34b-4b6f-a54e-570b0754f50e)
+
+![api_scheidsrechter_delete_auth](https://github.com/peetersbrent/enterprise_bp/assets/91012837/f926e3f0-20c4-45d1-b361-bcc778203762)
+
+Op deze screenshot zie je dat je een scheidsrechter ook kan aanpassen.
+Met daaronder het resultaat.
+
+![api_scheidsrechter_put_auth](https://github.com/peetersbrent/enterprise_bp/assets/91012837/bad8a50e-0943-462d-913c-645b6d4c092d)
+![api_scheidsrechter_put_auth_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/a844d3ec-4cdb-4163-97db-303bf0b1ccc9)
 
 ## Hosting 
 
