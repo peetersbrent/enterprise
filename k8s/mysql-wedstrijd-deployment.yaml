@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\peete\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert
+    kompose.version: 1.31.2 (a92241f79)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: mysql-wedstrijd
+  name: mysql-wedstrijd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: mysql-wedstrijd
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: C:\Users\peete\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert
+        kompose.version: 1.31.2 (a92241f79)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/enterprise-project-default: "true"
+        io.kompose.service: mysql-wedstrijd
+    spec:
+      containers:
+        - env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: root
+          image: mysql:latest
+          name: mysql-wedstrijd
+          ports:
+            - containerPort: 3306
+              hostPort: 3309
+              protocol: TCP
+          resources: {}
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: mysqldb-wedstrijd
+      restartPolicy: Always
+      volumes:
+        - name: mysqldb-wedstrijd
+          persistentVolumeClaim:
+            claimName: mysqldb-wedstrijd
+status: {}

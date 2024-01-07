@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\peete\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert
+    kompose.version: 1.31.2 (a92241f79)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: competitie-service
+  name: competitie-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: competitie-service
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: C:\Users\peete\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert
+        kompose.version: 1.31.2 (a92241f79)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/enterprise-project-default: "true"
+        io.kompose.service: competitie-service
+    spec:
+      containers:
+        - env:
+            - name: MONGODB_HOST
+              value: mongo-competities
+            - name: MONGODB_PORT
+              value: "27017"
+          image: brentpeeters/competitie
+          name: competitie-service
+          ports:
+            - containerPort: 8080
+              hostPort: 8080
+              protocol: TCP
+          resources: {}
+      restartPolicy: Always
+status: {}

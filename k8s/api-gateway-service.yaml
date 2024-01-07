@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\peete\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert
+    kompose.version: 1.31.2 (a92241f79)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: api-gateway
+  name: api-gateway
+spec:
+  type: NodePort
+  ports:
+    - name: "8083"
+      port: 8083
+      targetPort: 8083
+      nodePort: 30005
+  selector:
+    io.kompose.service: api-gateway
+status:
+  loadBalancer: {}
