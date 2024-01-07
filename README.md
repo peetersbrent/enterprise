@@ -131,7 +131,7 @@ Alle manifest files moeten nadat ze zijn aangemaakt, in een folder komen te staa
 Om er voor te zorgen dat hij de docker-compose niet neemt maar wel degelijk de folder gebruikt, heb ik hem een andere naam gegeven, namelijk 'configfile.yml'.
 Ik laat deze file erin staan om eventuele gemakkelijk te kunnen bekijken.
 
-### 2.2.2 Gebruik ClusterIP & Nodeport op een logische manier (+5%)
+### 2.2.2 Gebruik ClusterIP & Nodeport op een logische manier
 Om de api-gateway external toegangkelijk te maken nadat de deployment van Kubernetes op Okteto gebeurd is, is er nog iets extra nodig, namelijk de NodePort.
 Ik heb op alle service manifest files een NodePort service gezet met een gekozen, uniek portnummer. Dit zorgt ervoor dat weer alles toegangkelijk is.
 Het gebruik van ClusterIP heb ik niet gedaan.
