@@ -19,8 +19,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
 
-@SpringBootTest(classes = WedstrijdServiceTests.class)
-public class WedstrijdServiceTests {
+@SpringBootTest(classes = WedstrijdApplicationTests.class)
+public class WedstrijdApplicationTests {
     @InjectMocks
     private WedstrijdService wedstrijdService;
 
