@@ -46,3 +46,11 @@ spring:
             - Path=/scheidsrechter
           filters:
             - SetPath=/api/scheidsrechter
+
+        - id: scheidsrechter-service-delete
+          uri: http://${SCHEIDSRECHTER_SERVICE_BASEURL:localhost:8082}
+          predicates:
+            - Path=/scheidsrechter/{skuCode}
+            - Method=DELETE
+          filters:
+            - SetPath=/api/scheidsrechter/{skuCode}
