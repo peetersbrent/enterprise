@@ -25,7 +25,7 @@ Dit schema toont de architectuur en interactie tussen verschillende services en 
 
 Dit schema is een nuttige visuele weergave van hoe de verschillende componenten van de softwaretoepassing met elkaar communiceren. Het helpt bij het begrijpen van de stroom van gegevens en de interacties tussen de verschillende services en databases.
 
-![schema](https://github.com/peetersbrent/enterprise_bp/assets/91012837/f9a60dff-ced5-4d66-a296-61bbe5b0f249)
+![volledigschema](https://github.com/peetersbrent/enterprise_bp/assets/91012837/a6281e67-5b8f-40fc-8d71-e335827f59dc)
 
 ## Werking van endpoints:
 
