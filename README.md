@@ -124,7 +124,7 @@ Met daaronder het resultaat.
 ![api_scheidsrechter_put_auth_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/a844d3ec-4cdb-4163-97db-303bf0b1ccc9)
 
 ## Uitbereidingen
-### 2.2: Zet de deployment docker-compose.yml om naar Kubernetes Manifest .yml-files
+### 2.2 Zet de deployment docker-compose.yml om naar Kubernetes Manifest .yml-files
 Als uitbereiden heb ik mijn docker-compose.yml file omgezet naar Kubernetes Manifest files. 
 Dit heb ik gedaan door gebruik te maken van de website kompose.io. De command die ik gebruikt heb om alles om te zetten is, "kompose convert".
 Alle manifest files moeten nadat ze zijn aangemaakt, in een folder komen te staan met een specifieke naam, namelijk 'k8s'. 
