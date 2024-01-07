@@ -9,10 +9,12 @@ metadata:
     io.kompose.service: scheidsrechter-service
   name: scheidsrechter-service
 spec:
+  type: NodePort
   ports:
     - name: "8082"
       port: 8082
       targetPort: 8082
+      nodePort: 30007
   selector:
     io.kompose.service: scheidsrechter-service
 status:
