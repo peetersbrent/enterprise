@@ -124,14 +124,14 @@ Met daaronder het resultaat.
 ![api_scheidsrechter_put_auth_result](https://github.com/peetersbrent/enterprise_bp/assets/91012837/a844d3ec-4cdb-4163-97db-303bf0b1ccc9)
 
 ## Uitbereidingen
-# 2.2: Zet de deployment docker-compose.yml om naar Kubernetes Manifest .yml-files
+### 2.2: Zet de deployment docker-compose.yml om naar Kubernetes Manifest .yml-files
 Als uitbereiden heb ik mijn docker-compose.yml file omgezet naar Kubernetes Manifest files. 
 Dit heb ik gedaan door gebruik te maken van de website kompose.io. De command die ik gebruikt heb om alles om te zetten is, "kompose convert".
 Alle manifest files moeten nadat ze zijn aangemaakt, in een folder komen te staan met een specifieke naam, namelijk 'k8s'. 
 Om er voor te zorgen dat hij de docker-compose niet neemt maar wel degelijk de folder gebruikt, heb ik hem een andere naam gegeven, namelijk 'configfile.yml'.
 Ik laat deze file erin staan om eventuele gemakkelijk te kunnen bekijken.
 
-# 2.2.2 Gebruik ClusterIP & Nodeport op een logische manier (+5%)
+### 2.2.2 Gebruik ClusterIP & Nodeport op een logische manier (+5%)
 Om de api-gateway external toegangkelijk te maken nadat de deployment van Kubernetes op Okteto gebeurd is, is er nog iets extra nodig, namelijk de NodePort.
 Ik heb op alle service manifest files een NodePort service gezet met een gekozen, uniek portnummer. Dit zorgt ervoor dat weer alles toegangkelijk is.
 Het gebruik van ClusterIP heb ik niet gedaan.
